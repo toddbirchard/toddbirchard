@@ -23,9 +23,9 @@
       <td valign="top" width="49%">
         <li>🔭 I’m currently working on <strong>Publishing Code Tutorials</strong>.</li>
         <li>🌱 I’m currently learning <strong>Golang</strong></li>
-        <li>👯 I’m looking to collaborate on <strong>open source projects</strong>.</li>
+        <li>👯 I’m looking to collaborate on <strong>open source</strong>.</li>
         <li>🤔 I’m looking for contribtors for <strong>Hackers and Slackers</strong>.</li>
-        <li>💬 Ask me about <strong>Python, Data Engineering, Flask</strong>.</li>
+        <li>💬 Ask me about <strong>Python, Data Engineering, GatsbyJS</strong>.</li>
       </td>
     </tr>
   </tbody>
