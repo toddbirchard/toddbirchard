@@ -25,3 +25,4 @@ jobs:
           plugin_languages_skipped: lowlighter/metrics
           plugin_languages_indepth: yes
           plugin_languages_details: lines, bytes-size
+          plugin_calendar: yes
