@@ -64,7 +64,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_followup: yes
-          plugin_followup_sections: user, repositories
+          plugin_followup_sections: repositories
           plugin_followup_indepth: yes
           user: toddbirchard
 
