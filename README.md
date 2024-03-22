@@ -6,6 +6,8 @@
 
 ![Languages](metrics.plugin.languages.details.svg)
 
+![Collaboration](metrics.plugin.followup.user.svg)
+
 ![Stargazers](metrics.plugin.stargazers.svg)
 
 ![RSS](metrics.plugin.rss.svg)
