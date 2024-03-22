@@ -1,80 +1,79 @@
-# ====================================================================================
-# Action
-  
-name: Metrics
+name: New Metrics
 on:
-    schedule: [{cron: "0 0 * * *"}]
-    workflow_dispatch:
-    push: {branches: ["master", "main"]}
-    
-jobs:
-    github-metrics:
-        runs-on: ubuntu-latest
-        environment: production
-        config_order: base.header, base.repositories, traffic, calendar, languages, stargazers, rss
-       
-    steps:
-        - name: 🗃️ Base content - Default metrics
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.base.svg
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: header, activity, community, repositories, metadata
-            user: toddbirchard
+  schedule: [{ cron: "0 0 * * *" }]
+  workflow_dispatch:
+  push: { branches: ["master", "main"] }
 
-        - name: 🧱 Core Organization
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.organization.svg
-            user: hackersandslackers
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: header, repositories
-        
-        - name: 📆 Commit calendar - Current year calendar
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.plugin.calendar.svg
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: ""
-            plugin_calendar: yes
-            user: toddbirchard
-        
-        - name: 🈷️ Languages activity - Most used (with details)
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.plugin.languages.details.svg
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: ""
-            plugin_languages: yes
-            plugin_languages_ignored: >-
-              html, css, scss, sass less
-        plugin_languages_details: bytes-size, percentage
-        user: toddbirchard
-        
-        - name: 🧮 Repositories traffic - Repositories traffic
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.plugin.traffic.svg
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: repositories
-            plugin_traffic: yes
-            user: toddbirchard
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    environment: production
     
-        - name: ✨ Stargazers - Using classic charts
-        uses: lowlighter/metrics@master
-        with:
-            filename: metrics.plugin.stargazers.svg
-            token: ${{ secrets.METRICS_TOKEN }}
-            base: ""
-            plugin_stargazers: yes
-            user: toddbirchard
+    steps:
         
-        - name: 🗼 HackersAndSlackers RSS
+      - name: 🗃️ Base content - Default metrics
         uses: lowlighter/metrics@master
         with:
-            filename: metrics.plugin.rss.svg
-            base: ""
-            plugin_rss: yes
-            plugin_rss_source: https://hackersandslackers.com/author/todd/rss.xml
-            plugin_rss_limit: 4
-            user: toddbirchard
+          filename: metrics.base.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, activity, community, repositories, metadata
+          user: toddbirchard
+
+      - name: 🧱 Core Organization
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.organization.svg
+          user: hackersandslackers
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+
+      - name: 📆 Commit calendar - Current year calendar
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.calendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_calendar: yes
+          user: toddbirchard
+
+      - name: 🈷️ Languages activity - Most used (with details)
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.languages.details.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, scss, sass less
+          plugin_languages_details: bytes-size, percentage
+          user: toddbirchard
+
+      - name: 🧮 Repositories traffic - Repositories traffic
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.traffic.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: repositories
+          plugin_traffic: yes
+          user: toddbirchard
+
+      - name: ✨ Stargazers - Using classic charts
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.stargazers.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_stargazers: yes
+          user: toddbirchard
+
+      - name: 🗼 HackersAndSlackers RSS
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.rss.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_rss: yes
+          plugin_rss_source: https://hackersandslackers.com/author/todd/rss.xml
+          plugin_rss_limit: 4
+          user: toddbirchard
