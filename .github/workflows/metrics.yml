@@ -32,5 +32,3 @@ jobs:
           plugin_rss_source: https://hackersandslackers.com/author/todd/rss.xml
           plugin_rss_limit: 4
           config_order: base.header, base.repositories, traffic, calendar, languages, stargazers, rss
-          
-          
