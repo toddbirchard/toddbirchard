@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   push: { branches: ["master", "main"] }
 
-
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -35,6 +34,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_calendar: yes
+          plugin_calendar_limit: 2
           user: toddbirchard
 
       - name: 🈷️ Languages activity - Most used (with details)
