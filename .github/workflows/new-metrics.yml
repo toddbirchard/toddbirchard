@@ -33,7 +33,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_calendar: yes
-          plugin_calendar_limit: 1.5
+          plugin_calendar_limit: 1
           user: toddbirchard
 
       - name: 🈷️ Languages activity - Most used (with details)
